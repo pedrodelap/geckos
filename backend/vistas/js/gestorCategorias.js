@@ -114,12 +114,3 @@ function mostrarModalCategoria() {
 
     $('#categoriaModal').show();
 }
-
-$(".btnEditarNosotros").click(function() {
-
-    var idNosotros = $(this).attr("idNosotros");
-
-    window.location = "index.php?ruta=nosotros-editar&idNosotros=" + idNosotros;
-
-
-})

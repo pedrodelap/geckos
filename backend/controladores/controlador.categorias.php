@@ -4,11 +4,11 @@ class ControladorCategorias{
 
 	#LISTAR CATEGORIAS
 	#------------------------------------------------------------
-	public static function ctrlistarCategorias($item, $valor){
+	public static function ctrListarCategorias($item, $valor){
 
 		$tabla = "tb_categoria";
 
-		$respuesta = ModeloCategorias::mdlMostrarCategorias($tabla);
+		$respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
 
 		$i = 1;
 
@@ -31,6 +31,16 @@ class ControladorCategorias{
 
 	}
 
+	public static function ctrSeleccionarCategorias( $item, $valor){
+
+		$tabla = "tb_categoria";
+
+		$respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
+
+		return $respuesta;
+
+	}
+
 	public static function ctrRegistrarCategoria($valor){
 
 		$tabla = "tb_categoria";
@@ -38,6 +48,75 @@ class ControladorCategorias{
 		$respuesta = ModeloCategorias::mdlGuardarCategoria($tabla, $valor);
 
 		return $respuesta;
+
+	}
+
+	public static function ctrEditarCategoria(){
+
+		if(isset($_POST["actualizarCategoria"])){
+
+			if(trim($_POST["actualizarCategoria"]) != "" ) {
+
+				$idCategoria = $_GET['idCategoria'];
+
+				$actualizarCategoria = $_POST['actualizarCategoria'];
+			
+				echo'<script>console.log("idCategoria : ",'.$idCategoria.');</script>';
+
+				echo'<script>console.log("actualizarCategoria : ","'.$actualizarCategoria.'");</script>';
+
+				$tabla = "tb_categoria";
+
+				$datosController = array("id"=>$idCategoria,
+										"nombre"=>$actualizarCategoria);
+
+
+				$respuesta = ModeloCategorias::mdlEditarCategoria($datosController, $tabla);
+
+				if($respuesta == "ok"){
+
+					echo'<script>
+
+						Swal.fire({
+							title: "¡OK!",
+							text: "¡El artículo ha sido actualizado correctamente!",
+							icon: "success",
+							confirmButtonText: "Cerrar",
+							closeOnConfirm: false
+						}).then((result) => {
+								if (result.value) {	   
+									window.location = "index.php?ruta=imagenes&idCategoria='.$idCategoria.'";
+								} 
+						});
+
+
+					</script>';
+
+			}
+			
+		} else {
+
+				echo'<script>
+
+				Swal.fire({
+						title: "Ocurrio un problema",
+						text: "¡No Actualizar el nombre de la Categoria",
+						icon: "error",
+						showConfirmButton: true,
+						confirmButtonText: "Cerrar",
+						closeOnConfirm: false
+				}).then((result) => {
+						if (result.value) {
+
+
+						}
+				});
+
+				</script>';
+
+			}
+
+		}
 
 	}
 

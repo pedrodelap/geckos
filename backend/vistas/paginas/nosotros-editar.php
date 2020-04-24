@@ -19,9 +19,16 @@
             <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="main-card mb-3 card">
+                        <div class="card mb-3">
+
+                        
+                            <div class="card-header-tab card-header">
+                                <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                                    <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i> Editar Nosotros
+                                </div>
+                            </div>
+
                             <div class="card-body">
-                                <h5 class="card-title">Editar Nosotros</h5>
 
                                 <?php
 
@@ -31,7 +38,7 @@
                                     $row = ControladorNosotros::ctrMostrarNosotros($item, $valor);
 
                                 ?>
-                                    <form method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <form method="post" enctype="multipart/form-data">
                                         <input type="hidden" value="<?php echo $row["id_nosotro"]; ?>" name="idNosotros">
                                         <div class="position-relative form-group">
                                             <label for="textoNosotros" class=""></label>

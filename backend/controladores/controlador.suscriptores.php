@@ -102,7 +102,7 @@ class ControladorSuscriptores{
 
 		$datosController = $datos;
 
-		$respuesta = SuscriptoresModel::mdlSuscriptoresRevisados($datosController, "suscriptores");
+		$respuesta = ModeloSuscriptores::mdlSuscriptoresRevisados($datosController, "suscriptores");
 
 		echo $respuesta;
 

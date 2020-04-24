@@ -1,41 +1,41 @@
 <div class="app-main__outer">
-
-    <div class="app-main__inner p-0">
-
-        <div class="app-inner-layout">
-
-            <div class="app-inner-layout__header bg-heavy-rain">
-                <div class="app-page-title">
-                    <div class="page-title-wrapper">
-                        <div class="page-title-heading">
-                        <div class="page-title-icon">
-                            <i class="pe-7s-car icon-gradient bg-mean-fruit"></i>
-                        </div>
-                        <div>Articulos
-                            <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.</div>
-                        </div>
-                        </div>
-                        <div class="page-title-actions">
-                        </div>
-                    </div>
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-car icon-gradient bg-mean-fruit"></i>
+                </div>
+                <div>Articulos
+                    <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.</div>
+                </div>
+                </div>
+                <div class="page-title-actions">
                 </div>
             </div>
+        </div>
+
+
+
+
 
             <div class="app-inner-layout__wrapper">
 
                 <div class="tabs-animation">
 
-                    <div class="card mb-1">
+                    <div class="card mb-3">
 
                         <div class="card-header-tab card-header">
-                            <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"> </i>Slide</div>
-                            <div class="btn-actions-pane-right actions-icon-btn">
-
+                            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                                Listado de Articulos
                             </div>
                         </div>
 
+                        
 
                         <div class="card-body">
+
+                        <button id="btnAgregarArticulo" class="btn mr-2 mb-2 btn-primary" >Nuevo Artículo</button>
 
                             <!--=====================================
                                 ARTÍCULOS ADMINISTRABLE          
@@ -43,7 +43,7 @@
 
                             <div id="seccionArticulos">
 
-                                <button id="btnAgregarArticulo" class="btn btn-primary btn-lg">Agregar Artículo</button>
+                                
 
                                 <!--==== AGREGAR ARTÍCULO  ====-->
 
@@ -78,7 +78,7 @@
 
                                 ?>
 
-                                    <hr>
+                                    
 
                                     <!--==== EDITAR ARTÍCULO  ====-->
 
@@ -110,6 +110,6 @@
                 </div>
 
             </div>
-        </div>
+        
     </div>
 </div>

@@ -19,12 +19,14 @@
 
             <div class="tabs-animation">
 
-                <div class="card mb-1">
+
+
+
+                <div class="card mb-3">
 
                     <div class="card-header-tab card-header">
-                        <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"> </i>Slide</div>
-                        <div class="btn-actions-pane-right actions-icon-btn">
-
+                        <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                            <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i> Portfolio Performance
                         </div>
                     </div>
 
@@ -56,26 +58,20 @@
                         </div>
 
                         <!--===============================================-->
+                        
+                        
 
                     </div>
 
-                </div>
-
-                <div class="card mb-3">
-
-                    <div class="card-header-tab card-header">
-                        <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"> </i>Slide</div>
-                        <div class="btn-actions-pane-right actions-icon-btn">
-                            <div class="btn-group dropdown">  
-                            </div>
-                        </div>
-                    </div>
+<hr>
 
                     <div class="card-body">
 
                         <!--===============================================-->
 
                         <div id="textoSlide" class="">
+
+                            
 
                             <ul id="ordenarTextSlide">
 

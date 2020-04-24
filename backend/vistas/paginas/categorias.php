@@ -15,21 +15,22 @@
             </div>
         </div>
 
-        <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
-            <li class="nav-item">
-
-               <button type="button" onclick='nuevaCategoriaFormulario()' class="btn-shadow btn btn-primary">Nueva Categoria</button>
-
-            </li>
-        </ul>
-
         <div class="tab-content">
             <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="main-card mb-3 card">
+                        <div class="card mb-3">
+
+                            <div class="card-header-tab card-header">
+                                <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                                    Listado de Categorias de Imagenes
+                                </div>
+                            </div>
+
                             <div class="card-body">
-                                <h5 class="card-title">Table striped</h5>
+                            <button onclick='nuevaCategoriaFormulario()' class="btn mr-2 mb-2 btn-primary" >Nueva Categoria</button>
+
+                                <h5 class="card-title">&nbsp;</h5>
                                 <table class="mb-0 table table-striped">
                                     <thead>
                                         <tr>
@@ -49,7 +50,7 @@
                                         $valor = null ;
 
                                         $listarCategorias = new ControladorCategorias();
-                                        $listarCategorias -> ctrlistarCategorias($item, $valor);
+                                        $listarCategorias -> ctrListarCategorias($item, $valor);
 
                                     ?>
                                         
@@ -63,7 +64,7 @@
                     </div>
                 </div>
             </div>
-        </d iv>
+        </div>
 
     </div>
 </div>

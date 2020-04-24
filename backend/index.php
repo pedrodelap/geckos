@@ -8,6 +8,7 @@ require_once "controladores/controlador.suscriptores.php";
 require_once "controladores/controlador.mensajes.php";
 require_once "controladores/controlador.nosotros.php";
 require_once "controladores/controlador.categorias.php";
+require_once "controladores/controlador.imagenes.php";
 
 require_once "modelos/conexion.php";
 require_once "modelos/modelo.usuarios.php";
@@ -18,6 +19,7 @@ require_once "modelos/modelo.suscriptores.php";
 require_once "modelos/modelo.mensajes.php";
 require_once "modelos/modelo.nosotros.php";
 require_once "modelos/modelo.categorias.php";
+require_once "modelos/modelo.imagenes.php";
 
 $plantilla = new ControladorPlantilla();
 $plantilla -> ctrPlantilla();

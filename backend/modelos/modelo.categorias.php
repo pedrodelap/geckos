@@ -4,21 +4,37 @@ require_once "conexion.php";
 
 class ModeloCategorias{
 
-	#MOSTRAR ARTÍCULOS
+	#MOSTRAR CATEGORIAS
 	#------------------------------------------------------
-	public static function mdlMostrarCategorias($tabla){
+	public static function mdlMostrarCategorias($tabla, $item, $valor){
 
-		$stmt = Conexion::conectar()->prepare("SELECT id_categoria, v_nombre, v_fecha_crecion, i_estado FROM $tabla ORDER BY id_categoria" );
+		if($item != null){
 
-		$stmt -> execute();
+			$stmt = Conexion::conectar()->prepare("SELECT id_categoria, v_nombre, v_fecha_crecion, i_estado FROM $tabla WHERE $item = :$item ");
 
-		return $stmt -> fetchAll();
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_INT);
 
-		$stmt -> close();
+			$stmt -> execute();
+
+			return $stmt -> fetch();
+
+		}else{
+
+			$stmt = Conexion::conectar()->prepare("SELECT id_categoria, v_nombre, v_fecha_crecion, i_estado FROM $tabla ORDER BY id_categoria" );
+
+			$stmt -> execute();
+
+			return $stmt -> fetchAll();
 
 	}
 
-	#GUARDAR ARTICULO
+	$stmt -> close();
+
+	$stmt = null;
+
+	}
+
+	#GUARDAR CATEGORIA
 	#------------------------------------------------------------
 
 	public static function mdlGuardarCategoria($tabla, $valor){
@@ -41,7 +57,30 @@ class ModeloCategorias{
 
 	}
 
-	#GUARDAR ARTICULO
+	#ACTUALIZAR CATEGORIA
+	#---------------------------------------------------
+	public static function mdlEditarCategoria($datosModel, $tabla){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET v_nombre = :nombre WHERE id_categoria = :id");
+
+		$stmt -> bindParam(":nombre", $datosModel["nombre"], PDO::PARAM_STR);
+		$stmt -> bindParam(":id", $datosModel["id"], PDO::PARAM_INT);
+
+		if($stmt->execute()){
+
+			return "ok";
+		}
+
+		else{
+
+			return "error";
+		}
+
+		$stmt->close();
+
+	}	
+
+	#ELIMINAR CATEGORIAS
 	#------------------------------------------------------------
 
 	public static function mdlEliminarCategoria($tabla, $valor){
@@ -63,6 +102,8 @@ class ModeloCategorias{
 		$stmt->close();
 
 	}
+
+
 
 
 

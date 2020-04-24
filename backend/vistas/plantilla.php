@@ -226,6 +226,10 @@ session_start();
     <script src="vistas/js/gestorVideos.js"></script>    
     <script src="vistas/js/gestorMensajes.js"></script>
     <script src="vistas/js/gestorCategorias.js"></script>
+    <script src="vistas/js/gestorImagen.js"></script>
+
+
+    
     
 </body>
 </html>

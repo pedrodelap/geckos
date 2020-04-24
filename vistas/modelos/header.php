@@ -34,7 +34,7 @@
                         <li class="has-children">
                             <a href="#about-section" class="nav-link">Actividades</a>
                             <ul class="dropdown">
-                                <li><a href="#team-section" class="nav-link">Galeria</a></li>
+                                <li><a href="#portfolio-section" class="nav-link">Galeria</a></li>
                                 <li><a href="#pricing-section" class="nav-link">Videos</a></li>
                                 <li><a href="#blog-section" class="nav-link">Blog</a></li>
                             </ul>

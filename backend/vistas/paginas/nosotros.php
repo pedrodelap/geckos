@@ -19,10 +19,14 @@
             <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="main-card mb-3 card">
-                            <div class="card-body">
-                                <h5 class="card-title">Sobre Nosotros</h5>
+                        <div class="card mb-3">
 
+                            <div class="card-header-tab card-header">
+                                <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                                    <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i> Sobre Nosotros
+                                </div>
+                            </div>
+                            <div class="card-body">
 
                                 <?php
                                     
