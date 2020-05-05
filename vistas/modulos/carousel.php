@@ -4,6 +4,7 @@
 
     $slide = new Slide();
     $slide -> seleccionarSlideController();
+    
     ?>
 
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

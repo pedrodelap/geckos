@@ -37,39 +37,33 @@
 
         <div class="app-header-right">
             <div class="header-dots">
-  
 
             <?php
 
                 if($_SESSION["perfil"] == 'Administrador'){
-            
+
             ?>
-                <ul class="header-megamenu nav">
-                    <li class="btn-group nav-item ">
-                        <a href="mensajes" class="nav-link">
-                        
-                            <?php
 
-                                $revisarMensajes = new ControladorMensajes();
-                                $revisarMensajes -> ctrMensajesSinRevisar();
+                    <ul class="header-megamenu nav">
 
-                            ?>
-                            
-                             Mensajes
-                            <i class="fa ml-2 opacity-5"></i>
-                        </a>
-                    </li>
-                </ul>
+                    <?php
 
-                <div class="dropdown">
-                    <a href="suscriptores" class="p-0 mr-2 btn btn-link">
-                        <span class="icon-wrapper icon-wrapper-alt rounded-circle">
-                            <span class="icon-wrapper-bg bg-primary"></span>
-                            <i class="icon ion-android-notifications"></i>
-                            <span class="badge badge-dot badge-dot-sm ">Suscriptores</span>
-                        </span>
-                    </a>
-                </div>
+                        $revisarMensajes = new ControladorMensajes();
+                        $revisarMensajes -> ctrMensajesSinRevisar();
+
+                    ?>         
+
+                        <li class="btn-group nav-item ">
+                            <a href="suscriptores" class="p-1 mr-0 btn btn-link">
+                                <span class="icon-wrapper icon-wrapper-alt rounded-circle">
+                                    <span class="icon-wrapper-bg bg-primary"></span>
+                                        <i class="fa text-primary fa-users"></i>
+                                        <span class="badge badge-dot badge-dot-sm badge-primary"></span>
+                                </span>
+                            </a>
+                        </li>
+
+                    </ul>
 
             <?php
 
@@ -112,9 +106,6 @@
                                     <div class="scroll-area-xs" style="height: 150px;">
                                         <div class="scrollbar-container ps">
                                             <ul class="nav flex-column">
-
-
-
                                                 <li class="nav-item">
                                                     <a href="javascript:void(0);" class="nav-link">Mensajes
                                                         <div class="ml-auto badge badge-pill badge-info">4

@@ -1,3 +1,11 @@
+<?php
+
+    session_start();
+    $ruta = ControladorRuta::ctrRuta(); 
+
+ ?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -9,6 +17,7 @@
     <link rel="icon" type="image/png" href="vistas/assets/images/logo_geckos.png" sizes="64x64">
 
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/591df142b5.js" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="vistas/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="vistas/assets/css/jquery-ui.css">
@@ -21,10 +30,11 @@
     <link rel="stylesheet" href="vistas/assets/css/aos.css">
     <link rel="stylesheet" href="vistas/assets/css/style.css">
 
+    <script src="backend/vistas/assets/js/sweetalert.min.js"></script>
+
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
 
     <div class="site-wrap">
 
@@ -40,59 +50,82 @@
 
         <!--=====================================
 		Header
-		======================================-->
+        ======================================-->
+        
+        <?php
 
-		<?php include "modelos/header.php"; ?>
+            if(isset($_POST["idioma"])){
+
+                if($_POST["idioma"] == "es"){
+
+                    include "modulos/header.php";
+
+                }else{		
+
+                    include "modulos/header_en.php";
+
+                }
+
+            }else{
+
+                include "modulos/header.php";
+            }
+
+        ?>
 		
         <!--====  Fin de Header  ====-->
 
-
-
-        <!--=====================================
-		Carousel
+       <!--=====================================
+		About
 		======================================-->
 
-        <?php include "modelos/carousel.php"; ?>
+        <?php include "modulos/carousel.php"; ?>
 
-        <!--====  Fin de Carousel  ====-->
-
+        <!--====  Fin de About  ====-->        
 
 
        <!--=====================================
 		About
 		======================================-->
 
-        <?php include "modelos/about.php"; ?>
+        <?php include "modulos/about.php"; ?>
 
         <!--====  Fin de About  ====-->
-
 
 
        <!--=====================================
 		Team
 		======================================
 
-         include "modelos/team.php"; 
+         include "modulos/team.php"; 
 
-        -====  Fin de Team  ====-->		
-
+        -====  Fin de Team  ====-->
 
 
        <!--=====================================
 		Portfolio
 		======================================-->
 
-		<?php include "modelos/portfolio.php"; ?>
+		<?php include "modulos/blog.php"; ?>
+
+        <!--====  Fin de Portfolio  ====-->		
+
+       <!--=====================================
+		Portfolio
+		======================================-->
+
+		<?php include "modulos/portfolio.php"; ?>
 
         <!--====  Fin de Portfolio  ====-->		
 
 
+    
 
        <!--=====================================
 		Services
 		======================================-->
 
-		<?php include "modelos/services.php"; ?>
+		<?php include "modulos/services.php"; ?>
 
         <!--====  Fin de Services  ====-->
 
@@ -102,7 +135,7 @@
 		Testimonials
 		======================================-->
 
-		<?php include "modelos/testimonials.php"; ?>
+		<?php include "modulos/testimonials.php"; ?>
 
         <!--====  Fin de Testimonials  ====-->
 
@@ -112,37 +145,23 @@
 		Pricing
 		======================================-->
 
-		<?php include "modelos/pricing.php"; ?>
+		<?php include "modulos/pricing.php"; ?>
 
 		<!--====  Fin de Pricing  ====-->
 
 
-
 		<!--=====================================
-		About-Section
+		Pricing
 		======================================-->
 
-		<?php include "modelos/about-section.php"; ?>
+		<?php include "modulos/faq.php"; ?>
 
-		<!--====  Fin de About-Section  ====-->
-
-
-
-		<!--=====================================
-		Blog
-		======================================-->
-
-		<?php include "modelos/blog.php"; ?>
-
-		<!--====  Fin de Blog  ====-->
+        <!--====  Fin de Pricing  ====-->
+        
 
 
-
-		<!--=====================================
-		Blog
-		======================================-->
-
-		<?php include "modelos/contact.php"; ?>
+        
+		<?php include "modulos/contact.php"; ?>
 
 		<!--====  Fin de Blog  ====-->
 
@@ -151,7 +170,7 @@
 		Blog
 		======================================-->
 
-		<?php include "modelos/site-footer.php"; ?>
+		<?php include "modulos/site-footer.php"; ?>
 
 		<!--====  Fin de Blog  ====-->
 
@@ -170,7 +189,9 @@
     <script src="vistas/assets/js/jquery.sticky.js"></script>
     <script src="vistas/assets/js/isotope.pkgd.min.js"></script>
     <script src="vistas/assets/js/main.js"></script>
+    <script src="vistas/js/script.js"></script>
 
+    <input type="hidden" value="<?php echo $ruta; ?>" id="ruta">
 </body>
 
 </html>

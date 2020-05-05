@@ -2,11 +2,12 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-12 text-center">
-                <h2 class="section-title mb-3">Testimonials</h2>
+                <h2 class="section-title mb-3">Testimonios</h2>
             </div>
         </div>
     </div>
     <div class="slide-one-item home-slider owl-carousel">
+
         <div>
             <div class="testimonial">
 
@@ -20,6 +21,7 @@
                 </div>
             </div>
         </div>
+        
         <div>
             <div class="testimonial">
 

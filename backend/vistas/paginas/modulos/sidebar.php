@@ -66,12 +66,6 @@
                     </a>
                 </li>  
                 <li>
-                    <a href="galeria">
-                        <i class="metismenu-icon pe-7s-browser"></i> Galeria 
-                        <i class="metismenu-state-icon caret-left"></i>
-                    </a>
-                </li>  
-                <li>
                     <a href="videos">
                         <i class="metismenu-icon pe-7s-video"></i> Videos 
                         <i class="metismenu-state-icon caret-left"></i>

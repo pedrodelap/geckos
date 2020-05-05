@@ -172,7 +172,6 @@ session_start();
                         $_GET["ruta"] == "nosotros" ||
                         $_GET["ruta"] == "nosotros-editar" ||
 						$_GET["ruta"] == "articulos" ||
-                        $_GET["ruta"] == "galeria" ||
                         $_GET["ruta"] == "imagenes" ||
                         $_GET["ruta"] == "categorias" ||
                         $_GET["ruta"] == "imagenes" ||
@@ -227,9 +226,6 @@ session_start();
     <script src="vistas/js/gestorMensajes.js"></script>
     <script src="vistas/js/gestorCategorias.js"></script>
     <script src="vistas/js/gestorImagen.js"></script>
-
-
-    
     
 </body>
 </html>

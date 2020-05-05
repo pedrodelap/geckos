@@ -228,11 +228,31 @@ class ControladorMensajes{
 			}
 
 		}
-
 		
 		if($sumaRevision != 0) {
 
-			echo '<span class="badge badge-pill badge-danger ml-0 mr-2">'.$sumaRevision.'</span>';
+			echo '<li class="btn-group nav-item ">
+					<a href="mensajes" class="p-1 mr-0 btn btn-link">
+						<span class="icon-wrapper icon-wrapper-alt rounded-circle">
+							<span class="icon-wrapper-bg bg-danger"></span>
+								<i class="text-danger icon-anim-pulse lnr-envelope"></i>
+								<span class="badge badge-dot badge-dot-sm badge-danger">1</span>
+						</span>
+					</a>
+				</li>';
+
+		}else{
+
+			echo '<li class="btn-group nav-item ">
+					<a href="mensajes" class="p-1 mr-0 btn btn-link">
+						<span class="icon-wrapper icon-wrapper-alt rounded-circle">
+							<span class="icon-wrapper-bg bg-primary"></span>
+								<i class="text-primary lnr-envelope"></i>
+								<span class="badge badge-dot badge-dot-sm badge-primary"></span>
+						</span>
+					</a>
+				</li>';
+
 		}
 
 	}

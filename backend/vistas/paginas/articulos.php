@@ -82,7 +82,7 @@
 
                                     <!--==== EDITAR ARTÍCULO  ====-->
 
-                                    <ul id="editarArticulo">
+                                    <ul id="editarArticulo" style="padding-left: 0px;">
 
                                         <?php
 

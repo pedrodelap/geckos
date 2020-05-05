@@ -1,11 +1,15 @@
-class ControladorNosotros{
+<?php
+
+class Nosotros{
 
 #MOSTRAR ARTICULOS
 #-----------------------------------------------------------
 
-    public static function ctrMostrarNosotros($item, $valor){
+    public static function mostrarNosotrosController(){
 
+        $respuesta = NosotrosModels::mostrarNosotrosModel("tb_nosotros");
 
+        return $respuesta;        
 
     }
 }

@@ -4,55 +4,76 @@ class Articulos{
 
 	public static function seleccionarArticulosController(){
 
-		$respuesta = ArticulosModels::seleccionarArticulosModel("articulos");
+        $respuesta = ArticulosModels::mostrarArticulosModel();
+        
+        $medio = "";
+        $i = 1;
+        $flag = false;
+        $cantidad = 0;
+
+        $medioInicio = '<div><div class="testimonial"><div class="row">';
+        $medioFin    = '</div></div></div>';
 
 		foreach ($respuesta as $row => $item){
 
-			echo '<li class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            $cantidad ++;
 
-					<img src="backend/'.$item["ruta"].'" class="img-thumbnail">
-					<h1>'.$item["titulo"].'</h1>
-					<p>'.$item["introduccion"].'</p>
-					<a href="#articulo'.$item["id"].'" data-toggle="modal">
-					<button class="btn btn-default">Leer Más</button>
-					</a>
+        }        
 
-					<hr>
+		foreach ($respuesta as $row => $item){
 
-				</li>
+            $src = 'backend/'.$item['v_ruta'];
 
-				<div id="articulo'.$item["id"].'" class="modal fade">
-      
-					<div class="modal-dialog modal-content">
+            $date = $item['v_fecha_registro'];
 
-						<div class="modal-header" style="border:1px solid #eee">
-			            
-			   				<button type="button" class="close" data-dismiss="modal">&times;</button>
-			  		 		<h3 class="modal-title">'.$item["titulo"].'</h3>
-			            
-						</div>
+            $fechaConvertida = Articulos::fechaCastellano($date);
+            
+            $medio .= '<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="">
+                            <div class="h-entry">
+                                <a href="single.html">
+                                    <img src="'.$src.'" alt="'.$item['v_titulo'].'" class="img-fluid">
+                                </a>
+                                <h2 class="font-size-regular"><a href="#">'.$item['v_titulo'].'</a></h2>
+                                <div class="meta mb-4"><span class="mx-2"></span> '.$fechaConvertida.'<span class="mx-2"></span> <a href="#"></a></div>
+                                <p>'.$item['v_introduccion'].'</p>
+                                <p><a href="#">Continuar Leyendo...</a></p>
+                            </div>
+                        </div>';
 
-						<div class="modal-body" style="border:1px solid #eee">
-			            
-			    			<img src="backend/'.$item["ruta"].'" width="100%" style="margin-bottom:20px">
-			    			<p class="parrafoContenido text-justify">'.$item["contenido"].'</p>
-			            
-						</div>
+            if($i % 3 == 0){
 
-							<div class="modal-footer" style="border:1px solid #eee">
-			            
-			    				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			            
-							</div>
+                if($i != $cantidad){
 
-					</div>
+                $medio .= '</div></div></div><div><div class="testimonial"><div class="row">';
 
-				</div>';
+                }
 
-		}
+            }              
 
+            $i ++;
 
-	}
+        }
 
+        echo $medioInicio.$medio.$medioFin;
 
+    }
+
+    public static function fechaCastellano ($fecha) {
+        $fecha = substr($fecha, 0, 10);
+        $numeroDia = date('d', strtotime($fecha));
+        $dia = date('l', strtotime($fecha));
+        $mes = date('F', strtotime($fecha));
+        $anio = date('Y', strtotime($fecha));
+        $dias_ES = array("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo");
+        $dias_EN = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+        $nombredia = str_replace($dias_EN, $dias_ES, $dia);
+        $meses_ES = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+        $meses_EN = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+        $nombreMes = str_replace($meses_EN, $meses_ES, $mes);
+
+        // return $nombredia." ".$numeroDia." de ".$nombreMes." de ".$anio;
+
+        return $numeroDia." de ".$nombreMes.", ".$anio;
+    }
+          
 }

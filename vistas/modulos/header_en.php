@@ -32,26 +32,54 @@
                         </li>
                         -->
                         <li class="has-children">
-                            <a href="#about-section" class="nav-link">Actividades</a>
+                            <a href="#blog-section" class="nav-link">Actividades</a>
                             <ul class="dropdown">
+                                <li><a href="#blog-section" class="nav-link">Blog</a></li>
                                 <li><a href="#portfolio-section" class="nav-link">Galeria</a></li>
                                 <li><a href="#pricing-section" class="nav-link">Videos</a></li>
-                                <li><a href="#blog-section" class="nav-link">Blog</a></li>
                             </ul>
                         </li>
-                        <li><a href="#services-section" class="nav-link">Servicios</a></li>
+
+                        <li class="has-children">
+                            <a href="#services-section" class="nav-link">Servicios</a>
+                            <ul class="dropdown">
+                                <li><a href="#services-section" class="nav-link">Servicios</a></li>
+                                <li><a href="#testimonials-section" class="nav-link">Testimonios</a></li>
+                                <li><a href="#pricing-section" class="nav-link">Precios</a></li>
+                                <li><a href="#faq-section" class="nav-link">FAQ</a></li>
+                            </ul>
+                        </li>
+
                         <!--
                         <li><a href="#portfolio-section" class="nav-link">Galeria</a></li>
                         <li><a href="#" class="nav-link">Videos</a></li>
                         <li><a href="#blog-section" class="nav-link">Blog</a></li>
                         -->
                         <li><a href="#contact-section" class="nav-link">Contacto</a></li>
+
+                        <li class="has-children">
+                            <a href="#" class="nav-link">Idioma</a>
+                            <ul class="dropdown">
+                                <li>
+                                    <form method="post" action="<?php echo $ruta; ?>">
+                                        <input type="hidden" name="idioma" value="es">
+                                        <input type="submit" class="nav-link" value="Español" style="border: 0; background: transparent; cursor: pointer;">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form method="post" action="<?php echo $ruta; ?>">
+                                        <input type="hidden" name="idioma" value="en">
+                                        <input type="submit" class="nav-link" value="English" style="border: 0; background: transparent; cursor: pointer;">
+                                    </form>
+                                </li>
+                            </ul>                            
+                        </li>
                         <li><a href="backend/" class="nav-link">Login</a></li>
 
                     </ul>
                 </nav>
             </div>
-
+            <div id="ytWidget" style="display:none"></div><script src="https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=es&widgetTheme=light&autoMode=true" type="text/javascript"></script>
 
             <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a></div>
 

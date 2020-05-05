@@ -1,6 +1,6 @@
 <?php
 
-require_once "backend/models/conexion.php";
+require_once "backend/modelos/conexion.php";
 
 class GaleriaModels{
 

@@ -7,7 +7,7 @@
                         <i class="pe-7s-car icon-gradient bg-mean-fruit"></i>
                     </div>
                     <div>Inicio
-                        <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.</div>
+                        <div class="page-title-subheading"></div>
                     </div>
                 </div>
                 <div class="page-title-actions">
