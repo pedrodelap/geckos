@@ -483,8 +483,6 @@ PERFIL
 }
 
 #crearPerfil {
-    border-left: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
     padding: 40px;
 }
 
@@ -643,6 +641,15 @@ ESCRITORIO GRANDE
         overflow: hidden;
         display: inline-block;
         margin: 10px 18.3px;
+    }
+    /*Videos*/
+    #galeriaVideo li {
+        position: relative;
+        display: inline-block;
+        margin: 20px 20px;
+        background: white;
+        width: 46%;
+        height: auto;
     }
     /*Videos*/
     #galeriaVideo li {

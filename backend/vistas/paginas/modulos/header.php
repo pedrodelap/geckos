@@ -107,10 +107,13 @@
                                         <div class="scrollbar-container ps">
                                             <ul class="nav flex-column">
                                                 <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">Mensajes
-                                                        <div class="ml-auto badge badge-pill badge-info">4
-                                                        </div>
-                                                    </a>
+                                                <?php
+                                                    if($_SESSION["perfil"] == 'Administrador'){
+
+                                                        $cantidadMensajes = new ControladorMensajes();
+                                                        $cantidadMensajes -> ctrCantidadMensajesSinRevisar();
+                                                    }
+                                                ?>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="perfil" class="nav-link">Editar Perfil 

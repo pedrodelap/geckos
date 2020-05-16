@@ -11,44 +11,224 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>   
+            <div class="tabs-animation">
+                <div class="row">
+                    <div class="col-lg-12 col-xl-6">
+                        <div class="main-card mb-3 card">
+                            <div class="card-body">
 
-        <div class="tabs-animation">
 
-            <div class="card mb-3">
+                                <h5 class="card-title">Perfil</h5>
 
-                <div class="card-header-tab card-header">
-                    <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"> </i>Perfil</div>
-                    <div class="btn-actions-pane-right actions-icon-btn">
-                        <div class="btn-group dropdown">
-                            <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-icon btn-icon-only btn btn-link"><i class="pe-7s-menu btn-icon-wrapper"></i></button>
-                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-right rm-pointers dropdown-menu-shadow dropdown-menu-hover-link dropdown-menu">
-                                <h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-inbox"> </i><span>Menus</span></button>
-                                <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-file-empty"> </i><span>Settings</span></button>
-                                <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-book"> </i><span>Actions</span></button>
-                                <div tabindex="-1" class="dropdown-divider"></div>
-                                <div class="p-3 text-right">
-                                    <button class="mr-2 btn-shadow btn-sm btn btn-link">View Details</button>
-                                    <button class="mr-2 btn-shadow btn-sm btn btn-primary">Action</button>
+                                <!--=====================================
+                                PERFIL       
+                                ======================================-->
+
+                                <div id="editarPerfil">
+                                
+                                    <h5>Hola <?php echo $_SESSION["usuario"];?>
+                                        <span class="btn btn-info fa fa-edit float-left" id="btnEditarPerfil" style="font-size:10px; margin-right:10px"></span>
+                                    </h5>
+                                    <div style="position:relative">
+                                        <img width="42px" src="<?php echo $_SESSION["foto"];?> " class="rounded-circle float-right">
+                                    </div>
+
+                                    <hr>
+
+                                    <h6>Perfil: <?php
+                                        if( $_SESSION["perfil"] == 'Administrador')
+                                        {
+
+                                            echo "Administrador";
+
+                                        }
+                                        else{
+
+                                            echo "Editor";
+
+                                        } ?>
+                                    </h6>
+
+                                    <h6>Email: <?php echo $_SESSION["email"];?></h6>
+
+                                    <h6>Contraseña: *******</h6>
+
                                 </div>
+
+                                <!--=====================================
+                                EDITAR PERFIL       
+                                ======================================-->
+
+                                <div id="formEditarPerfil" style="display:none">
+                                
+                                    <form id="formularioPerfil" style="padding:20px" method="post" enctype="multipart/form-data">
+
+                                            <input name="editarId" type="hidden" value="<?php echo $_SESSION["id"];?>">
+
+                                            <input name="actualizarSesion" type="hidden" value="ok">
+                                        
+                                        <div class="form-group">
+                                        
+                                            <input name="editarUsuario" type="text" class="form-control" value="<?php echo $_SESSION["usuario"];?>" required>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                        
+                                            <input name="editarNombre" type="text" class="form-control" value="<?php echo $_SESSION["nombre"];?>" required>
+
+                                        </div>                                        
+
+                                        <div class="form-group">
+
+                                            <input name="editarPassword" type="password" placeholder="Ingrese la Contraseña hasta 10 caracteres" maxlength="10" class="form-control" required>
+
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <input name="editarEmail" type="email" value="<?php echo $_SESSION["email"];?>" class="form-control" required>
+
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <select name="editarPerfil" class="form-control" required>
+                                                <option value="" selected>Seleccione el Rol</option>
+                                                <option value="Administrador">Administrador</option>
+                                                <option value="Editor">Editor</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="form-group text-center">
+
+                                            <img src="<?php echo $_SESSION["foto"]; ?>" width="10%" class="rounded-circle">
+
+                                            <input type="hidden" value="<?php echo $_SESSION["foto"]; ?>" name="editarFoto">
+                                            
+                                            <input type="file" class="btn btn-default" id="cambiarFotoPerfil" style="display:inline-block; margin:10px 0">
+
+                                            <p class="text-center" style="font-size:12px">Tamaño recomendado de la imagen: 100px * 100px, peso máximo 2MB</p>
+
+                                        </div>
+
+                                        <input type="submit" id="guardarPerfil" value="Actualizar Perfil" class="btn btn-primary">
+
+                                    </form>
+
+                                    <?php 
+
+                                    $crearPerfil2 = new Perfiles();
+                                    $crearPerfil2 -> editarUsuarioController();
+
+                                    ?>
+                    
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-xl-6">
+                        <div class="main-card mb-3 card">
+                            <div class="card-body">
+
+                                <?php 
+
+                                    if($_SESSION["perfil"] == 'Administrador'){
+
+                                        echo '<div id="crearPerfil">
+
+                                                <button id="registrarPerfil" style="margin-bottom:20px" class="btn-shadow btn btn-info">Registrar un nuevo miembro</button>
+
+                                                <form id="formularioPerfil" style="display:none" method="post" enctype="multipart/form-data">
+                    
+                                                    <div class="form-group">
+                            
+                                                        <input name="nuevoUsuario" type="text" placeholder="Ingrese el Usuario hasta 10 caracteres" maxlength="10" class="form-control"  required>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                            
+                                                        <input name="nuevoNombre" type="text" placeholder="Ingrese el Nombre hasta 10 caracteres" maxlength="10" class="form-control"  required>
+
+                                                    </div>                                                    
+
+                                                    <div class="form-group">
+
+                                                        <input name="nuevoPassword" type="password" placeholder="Ingrese la Contraseña hasta 10 caracteres" maxlength="10" class="form-control" required>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+
+                                                        <input name="nuevoEmail" type="email" placeholder="Ingrese el Correo Electrónico" class="form-control" required>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+
+                                                        <select name="nuevoPerfil" id="nuevoPerfil" class="form-control" required>
+                                                            <option value="" selected>Seleccione el Rol</option>
+                                                            <option value="Administrador">Administrador</option>
+                                                            <option value="Editor">Editor</option>
+
+                                                        </select>
+
+                                                    </div>
+
+                                                    <div class="form-group text-center">
+                                                        
+                                                        <input type="file" class="btn btn-default" id="subirFotoPerfil" style="display:inline-block; margin:10px 0">
+
+                                                        <p class="text-center" style="font-size:12px">Tamaño recomendado de la imagen: 100px * 100px, peso máximo 2MB</p>
+
+                                                    </div>
+
+                                                    <input type="submit" id="guardarPerfil" value="Guardar Perfil" class="btn btn-primary">
+
+                                                </form>';
+
+                                                $crearPerfil = new Perfiles();
+                                                $crearPerfil -> nuevoUsuarioController();
+
+                                    }
+                    
+                                ?>
+
+                                <br />
+
+                                <div class="table-responsive">
+                                    <table id="tablaSuscriptores" class="table table-striped display">
+                                        <thead>
+                                        <tr>
+                                            <th>Usuario</th>
+                                            <th>Perfil</th>
+                                            <th>Email</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <?php
+                                            $verPerfiles = new Perfiles();
+                                            $verPerfiles -> verPerfilesController();
+                                            $verPerfiles -> borrarPerfilController();                                
+                                            ?>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="card-body">
-
-                    <!--===============================================-->
-
-                    <!--===============================================-->
-
-                </div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>

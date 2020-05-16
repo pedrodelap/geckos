@@ -9,10 +9,9 @@ class ModeloArticulos{
 
 	public static function mdlGuardarArticulo($datosModel, $tabla){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (v_titulo, v_introduccion, v_ruta, v_contenido) VALUES (:titulo, :introduccion, :ruta, :contenido)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (v_titulo, v_ruta, v_contenido) VALUES (:titulo, :ruta, :contenido)");
 
 		$stmt -> bindParam(":titulo", $datosModel["titulo"], PDO::PARAM_STR);
-		$stmt -> bindParam(":introduccion", $datosModel["introduccion"], PDO::PARAM_STR);
 		$stmt -> bindParam(":ruta", $datosModel["ruta"], PDO::PARAM_STR);
 		$stmt -> bindParam(":contenido", $datosModel["contenido"], PDO::PARAM_STR);
 

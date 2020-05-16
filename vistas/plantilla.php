@@ -135,7 +135,7 @@
 		Testimonials
 		======================================-->
 
-		<?php include "modulos/testimonials.php"; ?>
+		<!-- php include "modulos/testimonials.php"; ?>
 
         <!--====  Fin de Testimonials  ====-->
 
@@ -144,8 +144,8 @@
 		<!--=====================================
 		Pricing
 		======================================-->
-
-		<?php include "modulos/pricing.php"; ?>
+        
+		<!--php include "modulos/pricing.php"; ?>
 
 		<!--====  Fin de Pricing  ====-->
 

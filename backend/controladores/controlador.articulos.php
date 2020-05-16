@@ -8,23 +8,31 @@ class ControladorArticulos{
 
 		list($ancho, $alto) = getimagesize($datos);
 
+		$nuevoAncho = $ancho;
+
+		$nuevoAlto = $alto;
+
+		/*
 		if($ancho < 800 || $alto < 400){
 
 			echo 0;
 
-		}
+		
 
 		else{
-
+		}*/
 			$aleatorio = mt_rand(100, 999);
 			$ruta = "../vistas/assets/images/articulos/temp/articulo".$aleatorio.".jpg";
 			$ruta2 = "vistas/assets/images/articulos/temp/articulo".$aleatorio.".jpg";
 			$origen = imagecreatefromjpeg($datos);
-			$destino = imagecrop($origen, ["x"=>0, "y"=>0, "width"=>800, "height"=>400]);
+			//$destino = imagecrop($origen, ["x"=>0, "y"=>0, "width"=>800, "height"=>400]);
+			$destino = imagecrop($origen, ["x"=>0, "y"=>0, "width"=>$nuevoAncho, "height"=>$nuevoAlto]);
+
+
 			imagejpeg($destino, $ruta);
 
 			echo $ruta2;
-		}
+		//}
 
 	}
 
@@ -53,10 +61,11 @@ class ControladorArticulos{
 
 			$destino = imagecrop($origen, ["x"=>0, "y"=>0, "width"=>800, "height"=>400]);
 
-			imagejpeg($destino, $ruta);
+			//imagejpeg($destino, $ruta);
 
-			$datosController = array("titulo"=>$_POST["tituloArticulo"],
-				                     "introduccion"=>$_POST["introArticulo"]."...",
+			imagejpeg($origen, $ruta);
+
+			$datosController = array("titulo"=>$_POST["tituloArticulo"],				                     
 			 	                      "ruta"=>$ruta,
 			 	                      "contenido"=>$_POST["contenidoArticulo"]);
 
@@ -110,8 +119,7 @@ class ControladorArticulos{
 					<i class="lnr-pencil btn btn-primary editarArticulo"></i>	
 					</span>
 					<img src="'.$item["v_ruta"].'" class="img-thumbnail">
-					<h1>'.$item["v_titulo"].'</h1>
-					<p>'.$item["v_introduccion"].'</p>
+					<h1>'.$item["v_titulo"].'</h1>					
 					<input type="hidden" value="'.$item["v_contenido"].'">
 					<a href="#articulo'.$item["id_articulo"].'" data-toggle="modal">
 					<button class="btn btn-default">Leer Más</button>
@@ -126,8 +134,6 @@ class ControladorArticulos{
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title" id="exampleModalLabel">'.$item["v_titulo"].'</h5>
-
-
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>

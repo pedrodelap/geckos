@@ -42,11 +42,11 @@ session_start();
 
     <!--CHARTS-->
 
-    <!--Apex Charts
+    <!--Apex Charts-->
     <script src="vistas/assets/js/vendors/charts/apex-charts.js"></script>
 
     <script src="vistas/assets/js/scripts-init/charts/apex-charts.js"></script>
-    <script src="vistas/assets/js/scripts-init/charts/apex-series.js"></script>-->
+    <script src="vistas/assets/js/scripts-init/charts/apex-series.js"></script>
 
     <!--Sparklines-->
     <script src="vistas/assets/js/vendors/charts/charts-sparklines.js"></script>
@@ -69,9 +69,9 @@ session_start();
     <script src="vistas/assets/js/vendors/form-components/moment.js"></script>
     <script src="vistas/assets/js/scripts-init/form-components/datepicker.js"></script>
 
-    <!--Input Mask
+    <!--Input Mask-->
     <script src="vistas/assets/js/vendors/form-components/input-mask.js"></script>
-    <script src="vistas/assets/js/scripts-init/form-components/input-mask.js"></script>-->
+    <script src="vistas/assets/js/scripts-init/form-components/input-mask.js"></script>
 
     <!--RangeSlider-->
     <script src="vistas/assets/js/vendors/form-components/wnumb.js"></script>
@@ -92,16 +92,24 @@ session_start();
     <script src="vistas/assets/js/vendors/blockui.js"></script>
     <script src="vistas/assets/js/scripts-init/blockui.js"></script>
 
+    <!--Slick Carousel -->
+    <script src="vistas/assets/js/vendors/carousel-slider.js"></script>
+    <script src="vistas/assets/js/scripts-init/carousel-slider.js"></script>
 
+    <!--Circle Progress -->
+    <script src="vistas/assets/js/vendors/circle-progress.js"></script>
+    <script src="vistas/assets/js/scripts-init/circle-progress.js"></script>
+
+    
     <!--CountUp -->
     <script src="vistas/assets/js/vendors/count-up.js"></script>
     <script src="vistas/assets/js/scripts-init/count-up.js"></script>
 
-     <!--Maps
+     <!--Maps-->
     <script src="vistas/assets/js/vendors/gmaps.js"></script>
     <script src="vistas/assets/js/vendors/jvectormap.js"></script>
     <script src="vistas/assets/js/scripts-init/maps-word-map.js"></script>
-    <script src="vistas/assets/js/scripts-init/maps.js"></script> -->
+    <script src="vistas/assets/js/scripts-init/maps.js"></script> 
 
     <!--Guided Tours -->
     <script src="vistas/assets/js/vendors/guided-tours.js"></script>
@@ -112,9 +120,9 @@ session_start();
     <script src="vistas/assets/js/vendors/rating.js"></script>
     <script src="vistas/assets/js/scripts-init/rating.js"></script>
 
-    <!--Perfect Scrollbar
+    <!--Perfect Scrollbar-->
     <script src="vistas/assets/js/vendors/scrollbar.js"></script>
-    <script src="vistas/assets/js/scripts-init/scrollbar.js"></script> -->
+    <script src="vistas/assets/js/scripts-init/scrollbar.js"></script> 
 
 
     <!--TABLES -->
@@ -226,6 +234,7 @@ session_start();
     <script src="vistas/js/gestorMensajes.js"></script>
     <script src="vistas/js/gestorCategorias.js"></script>
     <script src="vistas/js/gestorImagen.js"></script>
+    <script src="vistas/js/gestorPerfiles.js"></script>
     
 </body>
 </html>

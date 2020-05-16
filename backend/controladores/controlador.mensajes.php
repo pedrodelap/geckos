@@ -11,7 +11,6 @@ class ControladorMensajes{
 		foreach ($respuesta as $row => $item){
 
 			echo '<div class="well well-sm" id="'.$item["id_mensajes"].'">
-		
 					<a href="index.php?action=mensajes&idBorrar='.$item["id_mensajes"].'"><span class="fa fa-times pull-right"></span></a>
 					<p>'.$item["v_fecha_registro"].'</p>
 					<h5>De: '.$item["v_nombre"].'</h5>
@@ -20,7 +19,6 @@ class ControladorMensajes{
 				  	<button class="btn btn-info leerMensaje">Leer</button>
 				  </div>
 				  <li class="nav-item-divider nav-item"></li>';
-
 		}
 
 	}
@@ -252,6 +250,39 @@ class ControladorMensajes{
 						</span>
 					</a>
 				</li>';
+
+		}
+
+	}
+
+	#MENSAJES SIN REVISAR
+	#------------------------------------------------------------
+	public static function ctrCantidadMensajesSinRevisar(){
+
+		$respuesta = ModeloMensajes::mdlMensajesSinRevisar("tb_mensajes");
+
+		$sumaRevision = 0;
+
+		foreach ($respuesta as $row => $item) {
+
+			if($item["i_revision"] == 0){
+
+				++$sumaRevision;	
+			}
+
+		}
+		
+		if($sumaRevision != 0) {
+
+			echo '<a href="mensajes" class="nav-link">Mensajes
+					<div class="ml-auto badge badge-pill badge-info">'.$sumaRevision.'
+					</div>
+				  </a>';
+
+		}else{
+
+			echo '<a href="mensajes" class="nav-link">Mensajes
+				  </a>';
 
 		}
 

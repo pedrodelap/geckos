@@ -80,7 +80,7 @@
 
                 <li class="app-sidebar__heading">Sitio Web</li>
                 <li>
-                    <a href="../index.php">
+                    <a href="../index.php" target="_blank">
                         <i class="metismenu-icon pe-7s-diamond">
                         </i>Sitio Web
                     </a>

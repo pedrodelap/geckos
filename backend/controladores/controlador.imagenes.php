@@ -35,9 +35,11 @@ class ControladorImagenes{
 
 			list($ancho, $alto) = getimagesize($_FILES["nuevaFoto"]["tmp_name"]);
 
-			$nuevoAncho = 500;
 
-			$nuevoAlto = 500;
+
+			$nuevoAncho = $ancho;
+
+			$nuevoAlto = $alto;
 
 			$ruta = "";
 
@@ -78,7 +80,7 @@ class ControladorImagenes{
 
 				$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
-				imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+				imagecopyresampled($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
 
 				imagejpeg($destino, $ruta);
 

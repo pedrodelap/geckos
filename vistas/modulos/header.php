@@ -44,8 +44,8 @@
                             <a href="#services-section" class="nav-link">Servicios</a>
                             <ul class="dropdown">
                                 <li><a href="#services-section" class="nav-link">Servicios</a></li>
-                                <li><a href="#testimonials-section" class="nav-link">Testimonios</a></li>
-                                <li><a href="#pricing-section" class="nav-link">Precios</a></li>
+                            <!--<li><a href="#testimonials-section" class="nav-link">Testimonios</a></li>
+                                <li><a href="#pricing-section" class="nav-link">Precios</a></li>-->
                                 <li><a href="#faq-section" class="nav-link">FAQ</a></li>
                             </ul>
                         </li>
@@ -75,8 +75,9 @@
                             </ul>
                         </li>
 
-
+                        <!--
                         <li><a href="backend/" class="nav-link">Login</a></li>
+                        -->
 
                     </ul>
                 </nav>

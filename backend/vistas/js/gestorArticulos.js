@@ -100,10 +100,9 @@ $(".editarArticulo").click(function() {
     idArticulo = $(this).parent().parent().attr("id");
     rutaImagen = $("#" + idArticulo).children("img").attr("src");
     titulo = $("#" + idArticulo).children("h1").html();
-    introduccion = $("#" + idArticulo).children("p").html();
     contenido = $("#" + idArticulo).children("input").val();
 
-    $("#" + idArticulo).html('<form method="post" enctype="multipart/form-data"><span><input style="width:10%; padding:5px 0; margin-top:4px" type="submit" class="btn btn-primary pull-right" value="Guardar"></span><div id="editarImagen"><input style="display:none" type="file" id="subirNuevaFoto" class="btn btn-default form-control"><div id="nuevaFoto"><span class="fa fa-times cambiarImagen"></span><img src="' + rutaImagen + '" class="img-thumbnail"></div></div><input class="form-control" type="text" value="' + titulo + '" name="editarTitulo"><textarea class="form-control" cols="30" rows="5" name="editarIntroduccion">' + introduccion + '</textarea><textarea class="form-control" name="editarContenido" id="editarContenido" cols="30" rows="10">' + contenido + '</textarea><input type="hidden" value="' + idArticulo + '" name="id"><input type="hidden" value="' + rutaImagen + '" name="fotoAntigua"><hr></form>');
+    $("#" + idArticulo).html('<form method="post" enctype="multipart/form-data"><span><input style="width:10%; padding:5px 0; margin-top:4px" type="submit" class="btn btn-primary pull-right" value="Guardar"></span><div id="editarImagen"><input style="display:none" type="file" id="subirNuevaFoto" class="btn btn-default form-control"><div id="nuevaFoto"><span class="fa fa-times cambiarImagen"></span><img src="' + rutaImagen + '" class="img-thumbnail"></div></div><input class="form-control" type="text" value="' + titulo + '" name="editarTitulo"><textarea class="form-control" name="editarContenido" id="editarContenido" cols="30" rows="10">' + contenido + '</textarea><input type="hidden" value="' + idArticulo + '" name="id"><input type="hidden" value="' + rutaImagen + '" name="fotoAntigua"><hr></form>');
 
     $(".cambiarImagen").click(function() {
 

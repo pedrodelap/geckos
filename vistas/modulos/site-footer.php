@@ -18,7 +18,7 @@
                             </div>
                             <div class="col-md-3">
                                 <h2 class="footer-heading mb-4">Síguenos</h2>
-                                <a href="https://www.facebook.com/Ronalddiaz1980" target="_blank" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                                <a href="https://www.facebook.com/GeckosAventura/" target="_blank" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
                                 <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
                                 <a href="https://www.instagram.com/geckos_travel_group_company/?hl=es-la" target="_blank" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
                                 <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>

@@ -57,7 +57,7 @@ $("#subirVideo").change(function() {
         datos.append("video", video);
 
         $.ajax({
-            url: "views/ajax/gestorVideos.php",
+            url: "ajax/ajax.videos.php",
             method: "POST",
             data: datos,
             cache: false,
@@ -65,7 +65,8 @@ $("#subirVideo").change(function() {
             processData: false,
             beforeSend: function() {
 
-                $("#galeriaVideo").before('<img src="views/images/status.gif" id="status">');
+                $("#galeriaVideo").before('<img src="vistas/assets/images/status.gif" id="status">');
+
 
             },
             success: function(respuesta) {
@@ -74,11 +75,11 @@ $("#subirVideo").change(function() {
 
                 $("#galeriaVideo").css({ "height": "auto" });
 
-                $("#galeriaVideo").append('<li><span class="fa fa-times"></span><video controls><source src="' + respuesta.slice(6) + '" type="video/mp4"></video></li>')
+                $("#galeriaVideo").append('<li><span class="fa fa-times"></span><video controls><source src="' + respuesta + '" type="video/mp4"></video></li>')
 
                 Swal.fire({
                     title: "¡OK!",
-                    text: "¡El video se subió correctamente!",
+                    text: "¡El video se subió correctamente!2",
                     icon: "success",
                     confirmButtonText: "Cerrar",
                     closeOnConfirm: false
@@ -118,7 +119,7 @@ $(".eliminarVideo").click(function() {
     borrarVideo.append("rutaVideo", rutaVideo);
 
     $.ajax({
-        url: "views/ajax/gestorVideos.php",
+        url: "ajax/ajax.videos.php",
         method: "POST",
         data: borrarVideo,
         cache: false,
@@ -177,7 +178,7 @@ $("#guardarVideo").click(function() {
         actualizarOrden.append("actualizarOrdenItem", ordenItem[i]);
 
         $.ajax({
-            url: "views/ajax/gestorVideos.php",
+            url: "ajax/ajax.videos.php",
             method: "POST",
             data: actualizarOrden,
             cache: false,

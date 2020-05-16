@@ -41,6 +41,30 @@
 
                     <!--===============================================-->
 
+
+                    <form method="post" enctype="multipart/form-data">
+
+                        <input type="file" id="subirVideo" name="video" class="btn btn-default" required>
+
+                    </form>
+
+                    <p>Subir sólo videos en formato MP4 y que no exceda el peso de 50 MB</p>
+
+                    <ul id="galeriaVideo">
+
+                        <?php
+
+                            $video = new ControladorVideos();
+                            $video -> ctrMostrarVistaVideos();
+
+                        ?>
+
+                    </ul>
+
+                    <button id="ordenarVideo" class="btn btn-warning" style="margin:10px 30px;">Ordenar Videos</button>
+
+                    <button id="guardarVideo" class="btn btn-primary" style="margin:10px 30px; display:none">Guardar Orden Videos</button>
+
                     <!--===============================================-->
 
                 </div>

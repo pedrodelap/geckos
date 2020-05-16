@@ -53,8 +53,6 @@
 
                                         <input name="tituloArticulo" type="text" placeholder="Título del Artículo" class="form-control" required>
 
-                                        <textarea name="introArticulo" id="" cols="30" rows="5" placeholder="Introducción del Articulo" class="form-control" maxlength="170" required></textarea>
-
                                         <input type="file" name="imagen" class="btn btn-default" id="subirFoto" required>
 
                                         <p>Tamaño recomendado: 800px * 400px, peso máximo 2MB</p>

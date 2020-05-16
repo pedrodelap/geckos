@@ -6,7 +6,7 @@ class ArticulosModels{
 
 	public static function mostrarArticulosModel(){
 
-		$stmt = Conexion::conectar()->prepare("SELECT id_articulo, v_titulo , v_introduccion , v_ruta , v_contenido , i_orden , i_estado , v_fecha_registro  FROM  tb_articulos  ORDER BY  v_fecha_registro  ASC");
+		$stmt = Conexion::conectar()->prepare("SELECT id_articulo, v_titulo , v_introduccion , v_ruta , v_contenido , i_orden , i_estado , v_fecha_registro  FROM  tb_articulos  ORDER BY  i_orden  ASC");
 
 		$stmt->execute();
 

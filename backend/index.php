@@ -9,6 +9,8 @@ require_once "controladores/controlador.mensajes.php";
 require_once "controladores/controlador.nosotros.php";
 require_once "controladores/controlador.categorias.php";
 require_once "controladores/controlador.imagenes.php";
+require_once "controladores/controlador.videos.php";
+require_once "controladores/controlador.perfiles.php";
 
 require_once "modelos/conexion.php";
 require_once "modelos/modelo.usuarios.php";
@@ -20,6 +22,8 @@ require_once "modelos/modelo.mensajes.php";
 require_once "modelos/modelo.nosotros.php";
 require_once "modelos/modelo.categorias.php";
 require_once "modelos/modelo.imagenes.php";
+require_once "modelos/modelo.videos.php";
+require_once "modelos/modelo.perfiles.php";
 
 $plantilla = new ControladorPlantilla();
 $plantilla -> ctrPlantilla();

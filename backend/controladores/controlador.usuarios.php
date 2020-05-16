@@ -31,6 +31,7 @@ class ControladorUsuarios{
 						$_SESSION["usuario"] = $respuesta["v_usuario"];
 						$_SESSION["foto"] = $respuesta["v_foto"];
 						$_SESSION["perfil"] = $respuesta["v_perfil"];
+						$_SESSION["email"] = $respuesta["v_email"];
 
 						/*=============================================
 						REGISTRAR FECHA PARA SABER EL ÚLTIMO LOGIN

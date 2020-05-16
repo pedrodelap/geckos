@@ -2,6 +2,12 @@
 VALIDAR MENSAJES
 =============================================*/
 
+$('.modalArticuloFront').appendTo("body");
+
+/*=============================================
+VALIDAR MENSAJES
+=============================================*/
+
 function validarMensaje() {
 
     nombres = $("#nombres").val();

@@ -13,7 +13,7 @@ class ControladorSlide{
 
 		list($ancho, $alto) = getimagesize($datos["imagenTemporal"]);
 		
-		if($ancho < 1600 || $alto < 600){
+		if($ancho < 1000 || $alto < 400){
 
 			echo 0;
 

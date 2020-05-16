@@ -30,14 +30,38 @@ class Articulos{
             
             $medio .= '<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="">
                             <div class="h-entry">
-                                <a href="single.html">
+                                <a href="#" data-toggle="modal" data-target="#Articulo'.$item['id_articulo'].'">
                                     <img src="'.$src.'" alt="'.$item['v_titulo'].'" class="img-fluid">
                                 </a>
-                                <h2 class="font-size-regular"><a href="#">'.$item['v_titulo'].'</a></h2>
+                                <h2 class="font-size-regular"><a href="#" data-toggle="modal" data-target="#Articulo'.$item['id_articulo'].'">'.$item['v_titulo'].'</a></h2>
                                 <div class="meta mb-4"><span class="mx-2"></span> '.$fechaConvertida.'<span class="mx-2"></span> <a href="#"></a></div>
-                                <p>'.$item['v_introduccion'].'</p>
-                                <p><a href="#">Continuar Leyendo...</a></p>
+                                <a href="#" data-toggle="modal" data-target="#Articulo'.$item['id_articulo'].'">Continuar Leyendo...</a>
+
                             </div>
+                        </div>
+                        
+                        
+                        <!-- Modal -->
+                        <div class="modal fade modalArticuloFront" id="Articulo'.$item['id_articulo'].'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h3 class="modal-title text-center" id="exampleModalLongTitle">'.$item['v_titulo'].'</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body" style="border:1px solid #eee">
+
+                                <img src="'.$src.'" width="100%" style="margin-bottom:20px">
+                                <p class="parrafoContenido text-justify"><h6>'.$item['v_contenido'].'</h6></p>
+
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
                         </div>';
 
             if($i % 3 == 0){
